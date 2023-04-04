@@ -4,7 +4,7 @@
 
 Filiz Hakan
 
-## Technologies
+#### Technologies
 
 - JS
 - CSS
@@ -21,12 +21,12 @@ Filiz Hakan
 - React-router-DOM (version 6.3.0)
 - Recharts (version 2.1.11)
 
-#### Prerequisites :
+### Prerequisites :
 
 - [Back-end](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard)
 - [NPM](https://www.npmjs.com/)
 
-#### Starting the project :
+### Starting the project :
 
 - Launch the Back-end on the port 3000 with the command `npm run dev`
 - Fork or clone the repository
@@ -39,17 +39,3 @@ For this project, we need to design a dashboard showing a user's performances wh
 <h3>Model in Figma: </h3>
 <a href="https://www.figma.com/file/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR?node-id=0-1&t=vfinV2XURfYZ5vTL-0"> See the model
 </a>
-
-#### Possible endPoints on API port (3000)
-
-This project includes four endpoints that you will be able to use:
-
-http://localhost:3000/user/${userId} - retrieves information from a user. This first endpoint includes the user id, user information (first name, last name and age), the current day's score (todayScore) and key data (calorie, macronutrient, etc.).
-http://localhost:3000/user/${userId}/activity - retrieves a user's activity day by day with kilograms and calories.
-http://localhost:3000/user/${userId}/average-sessions - retrieves the average sessions of a user per day. The week starts on Monday.
-http://localhost:3000/user/${userId}/performance - retrieves a user's performance (energy, endurance, etc.).
-Warning, currently only two users have been mocked. They have userId 12 and 18 respectively.
-
-Examples of queries
-http://localhost:3000/user/12/performance - Retrieves the performance of the user with id 12
-http://localhost:3000/user/18 - Retrieves user 18's main information.
