@@ -1,4 +1,4 @@
-# P12 SportSee : Analytics Dashboard V1
+![logo](https://user-images.githubusercontent.com/84918375/178348430-c7b1a04e-cf07-431f-992d-3540e822f9ec.svg)
 
 ## Author
 
@@ -9,6 +9,31 @@ Filiz Hakan
 - JS
 - CSS
 - React
+
+##### Langage: JavaScript
+
+##### Framework: ReactJS
+
+##### Dependencies:
+
+- React (version 17.0.2)
+- React-DOM (version 17.0.2)
+- React-router-DOM (version 6.3.0)
+- Recharts (version 2.1.11)
+
+### Possible endPoints on API port (3000)
+
+This project includes four endpoints that you will be able to use:
+
+http://localhost:3000/user/${userId} - retrieves information from a user. This first endpoint includes the user id, user information (first name, last name and age), the current day's score (todayScore) and key data (calorie, macronutrient, etc.).
+http://localhost:3000/user/${userId}/activity - retrieves a user's activity day by day with kilograms and calories.
+http://localhost:3000/user/${userId}/average-sessions - retrieves the average sessions of a user per day. The week starts on Monday.
+http://localhost:3000/user/${userId}/performance - retrieves a user's performance (energy, endurance, etc.).
+Warning, currently only two users have been mocked. They have userId 12 and 18 respectively.
+
+Examples of queries
+http://localhost:3000/user/12/performance - Retrieves the performance of the user with id 12
+http://localhost:3000/user/18 - Retrieves user 18's main information.
 
 ##
 
