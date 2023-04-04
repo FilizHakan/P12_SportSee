@@ -1,15 +1,18 @@
 ![logo](https://user-images.githubusercontent.com/84918375/178348430-c7b1a04e-cf07-431f-992d-3540e822f9ec.svg)
 
-#Case Study : SportSee
+# Case Study : SportSee
 
 ---
 
-<h3>Description :</h3>
+## Description
+
 For this project, we need to design a dashboard showing a user's performances while exercising. Therefore, anyone using the dasboard can keep up with his/her own performances on a weekly and/or daily basis. Only the desktop version is required (1024px x 780px) for this sprint. We use Figma to base the dashboard model.
 
-<h3>Model : </h3>
+## Model
+
 <a href="https://www.figma.com/file/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR?node-id=0-1&t=vfinV2XURfYZ5vTL-0"> See the model
 </a>
+
 ---
 
 ## Author
