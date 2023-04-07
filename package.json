@@ -1,0 +1,24 @@
+{
+  "name": "p12_sportsee",
+  "version": "1.0.0",
+  "description": "![logo](https://user-images.githubusercontent.com/84918375/178348430-c7b1a04e-cf07-431f-992d-3540e822f9ec.svg)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FilizHakan/P12_SportSee.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FilizHakan/P12_SportSee/issues"
+  },
+  "homepage": "https://github.com/FilizHakan/P12_SportSee#readme",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-react-app": "^3.1.2"
+  }
+}

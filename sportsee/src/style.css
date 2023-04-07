@@ -1,0 +1,24 @@
+body {
+  width: 100%;
+  margin: auto;
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  -webkit-margin-before: 0em;
+  margin-block-start: 0em;
+  -webkit-margin-after: 0em;
+  margin-block-end: 0em;
+}
+
+p {
+  -webkit-margin-before: 0em;
+  margin-block-start: 0em;
+  -webkit-margin-after: 0em;
+  margin-block-end: 0em;
+}
+
+
+
