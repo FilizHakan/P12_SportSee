@@ -6,8 +6,8 @@ import {
 } from "react-router-dom";
 
 import Home from "./pages/Home";
-import Profile from "./pages/Profile/profile"
-import Error from "./components/Error";
+import Profile from "./pages/Profile";
+import Error404 from "./pages/Error404";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
           <Routes>
             <Route path="SportSee/Home" element={<Home />} />
             <Route path="/statistics/:id" element={<Profile />} />
-            <Route path="*" element={<Error code={"ERR_BAD_REQUEST"} />} />
+            <Route path="*" element={<Error404 code={"ERR_BAD_REQUEST"} />} />
           </Routes>
         </Router>
       </div>
