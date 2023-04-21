@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useFetch = (url)=>
+export default function useFetch (url)
 {
     // Use hooks with useState (re-display) and useEffect
     const [data, setData] =useState(null);
@@ -29,5 +29,3 @@ const useFetch = (url)=>
 
     return { data, error, isDataLoading };
 };
-    
-export default useFetch;

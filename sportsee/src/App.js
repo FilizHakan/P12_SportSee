@@ -14,8 +14,8 @@ function App() {
       <div>
         <Router>
           <Routes>
-            <Route path="SportSee/Home" element={<Home />} />
-            <Route path="/statistics/:id" element={<Profile />} />
+            <Route path="/SportSee/Home" element={<Home />} />
+            <Route path="/statistics/:userId" element={<Profile />} />
             <Route path="*" element={<Error404 code={"ERR_BAD_REQUEST"} />} />
           </Routes>
         </Router>

@@ -7,10 +7,12 @@ function Logo()
 {
   return (
     <div className="logoContainer">
+
       <Link to="http://localhost:3000/SportSee/Home">
         <img src={LogoSportSee} className="sportSeeLogo" alt="SportSee Logo">
         </img>
       </Link>
+      
     </div>
   );
 };
