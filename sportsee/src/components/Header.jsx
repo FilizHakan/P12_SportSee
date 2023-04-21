@@ -1,14 +1,14 @@
 import React from "react";
 
 import SideBar from "./SideBar";
-import HorizHeader from "./HorizontalHeader/HorizHeader";
+import HorizontalHeader from "./SubComponents/HorizontalHeader";
 
 
 function Header()
 {
     return (
         <div className="headerContainer">
-            <HorizHeader />
+            <HorizontalHeader />
             <SideBar />
         </div>
     )

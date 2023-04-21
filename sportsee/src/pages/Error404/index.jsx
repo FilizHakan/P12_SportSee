@@ -3,13 +3,10 @@ import Error from "../../components/Error";
 
 import "./error404.css";
 
-function Error404() {
+export default function Error404() {
   return (
     <main>
       <Error />     
     </main>
   );
 };
-
-
-export default Error404;
