@@ -59,7 +59,7 @@ export default function SessionLength (session)
         <div className="averageDuration"></div>
         <p className="sessionLengthTitle">Durée moyenne des sessions</p>
 
-        <ResponsiveContainer aspect={1.5}>
+        <ResponsiveContainer>
           <LineChart data={days} margin={{ top: 0, right: 16, bottom: 24, left: 16 }}>
             <XAxis dataKey="day" stroke="rgba(255, 255, 255, 0.6)" axisLine={false} dy={10} tickLine={false} tick={{fontSize: 12, fontWeight: 500,}} />
             <YAxis dataKey="sessionLength" domain={[10, "dataMax + 70"]} hide={true} />

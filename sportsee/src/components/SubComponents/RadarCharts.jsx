@@ -38,7 +38,7 @@ import {
 
   return (
     <div className="radarChartsData">
-      <ResponsiveContainer aspect={1.5}>
+      <ResponsiveContainer height="80%">
         <RadarChart 
           cx="50%" 
           cy="58%" 

@@ -36,10 +36,10 @@ export default function GoalScore (user)
         {" "} de votre objectif
       </p>
 
-      <ResponsiveContainer aspect={1.5}>
+      <ResponsiveContainer height="110%">
         <RadialBarChart 
           width={730} 
-          height={250} 
+          height={200} 
           innerRadius={80} 
           outerRadius={100} 
           data={TSData} 

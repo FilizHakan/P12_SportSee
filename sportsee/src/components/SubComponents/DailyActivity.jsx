@@ -74,7 +74,7 @@ export default function DailyActivity (activity)
 
             <p className="dailyActivityTitle">Activité quotidienne</p>
 
-            <ResponsiveContainer aspect={4}>
+            <ResponsiveContainer height="195%">
 
                 <BarChart 
                     width={500} 

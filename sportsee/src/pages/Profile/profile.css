@@ -167,7 +167,7 @@
 
 @media screen and (min-width: 1024px) and (max-width: 1439px) {
     .verticalSideBar {
-        min-height: 905px;
+        min-height: 963px;
     }
 
     .iconsContainer {
@@ -208,7 +208,7 @@
     .userContainer {
       right: 23px;
       left: 140px;
-      height: 74vh;
+      height: 81vh;
     }
   }
   
@@ -222,7 +222,7 @@
 .name {
     font-size: 50px;
     font-weight: 500;
-    margin: 10px 0 10px 0;
+    margin: 10px 0 0 0;
 }
 
 .congrats {
@@ -239,6 +239,11 @@
         font-size: 16px;
         margin: 0;
     }
+
+    .name {
+        margin: -20px 0 10px 0;
+    }
+    
 }
 
 /**** CHARTS ANALYSIS ****/
@@ -246,7 +251,6 @@
     display: flex;
     width: 100%;
     height: 80%;
-    margin-top: 10px;
 }
 
 .chartsContainer {
@@ -314,12 +318,20 @@
         width: 258px;
     }
 
+    .statsContainer {
+        height: 95%;
+        margin-top: 30px;
+    }
+
     .chartsContainer {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         width: 100%;
         height: 100%;
+    }
+    .energyCountContainer {
+        height: 105%;
     }
 }
 
@@ -333,8 +345,8 @@
 .activityContainer {
     width: 95%;
     height: 40%;
-    background-color: #f6f5f589;
     border-radius: 5px;
+    background-color: #f6f5f589;
 }
 
 .dailyActivityTitle {
@@ -354,7 +366,6 @@
     height: 75px;
     color: #fff;
     background-color: red;
-    border: none;
     line-height: 3;
     font-size: 12px;
 }
@@ -392,6 +403,16 @@
     .dailyActivityDescendantLabel {
         font-size: 12px;
     }
+
+    .activityContainer {
+        height: 60%;
+        width: 97%;
+    }
+
+    .dailyActivityWrapper {
+        width: 100%;
+    }
+
 }
 
 /** SESSION LENGTH **/
@@ -464,6 +485,10 @@
     .sessionLengthTitle {
       font-size: 12px;
     }
+
+    .sessionContainer {
+        height: 30%;
+    }
 }
 
 /** RADARCHARTS **/
@@ -512,10 +537,14 @@
 
     .scoretitle {
         left: 0;
-        top: 40px;
-        font-size: 18px;
+        top: 45px;
+        font-size: 17px;
         text-align: center;
         width: 100%;
         height: auto;
+    }
+
+    .sessionContainer {
+        width: 97%;
     }
 }
