@@ -1,11 +1,9 @@
 ![logo](https://raw.githubusercontent.com/FilizHakan/P12_SportSee/main/sportsee/src/assets/logo-sportsee.svg)
 
-# Case Study : SportSee Documentation
+# Case Study : SportSee Project
 
-=====================================
-
-:Author: Filiz Hakan
-:Version: 1.0
+- Author: Filiz Hakan
+- Version: 1.0
 
 ## Content
 
