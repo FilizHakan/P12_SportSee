@@ -9,8 +9,12 @@
 
 =====================================
 
+<<<<<<< HEAD
 :Author: Filiz Hakan
 :Version: 1.0
+=======
+For this project, we need to design a dashboard concept, monitoring user's performances. Therefore, anyone using the dashboard can keep up with his/her own performances on a weekly and/or daily basis. Only the desktop version is required (1024px x 780px) for this sprint. We use Figma to base the dashboard model.
+>>>>>>> main
 
 ## Content
 
