@@ -1,7 +1,7 @@
 {
   "name": "p12_sportsee",
   "version": "1.0.0",
-  "description": "![logo](https://user-images.githubusercontent.com/84918375/178348430-c7b1a04e-cf07-431f-992d-3540e822f9ec.svg)",
+  "description": "![logo](https://raw.githubusercontent.com/FilizHakan/P12_SportSee/main/sportsee/src/assets/logo-sportsee.svg)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
