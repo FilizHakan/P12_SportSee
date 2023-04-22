@@ -1,4 +1,4 @@
-![logo](https://user-images.githubusercontent.com/84918375/178348430-c7b1a04e-cf07-431f-992d-3540e822f9ec.svg)
+![logo](https://raw.githubusercontent.com/FilizHakan/P12_SportSee/main/sportsee/src/assets/logo-sportsee.svg)
 
 # Case Study : SportSee
 
@@ -39,7 +39,7 @@ Filiz Hakan
 
 ## Starting the project :
 
-- Launch the Back-end on the port 3000 with the command `npm run dev`
+- Launch the Back-end on the port 3001 with the command `npm run dev`
 - Fork or clone the repository
 - The `npm install` command will allow you to install the dependencies.
 - The `npm start` command will allow you to launch the project.
