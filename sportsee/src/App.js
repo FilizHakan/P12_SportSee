@@ -9,6 +9,10 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Error404 from "./pages/Error404";
 
+/**
+ * @description App is the creation of a the router
+ * @returns the different paths of each page
+ */
 function App() {
   return (
       <div>

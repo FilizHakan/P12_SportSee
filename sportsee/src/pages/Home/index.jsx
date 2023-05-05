@@ -5,6 +5,10 @@ import LogoSportSee from "../../assets/logo-sportsee.svg"
 import IconSportSeeMan from "../../assets/icon-man.svg" 
 import "./home.css";
 
+/**
+ * @description Home is the creation of the main home page
+ * @returns the main home page
+ */
 function Home() {
     return (
     <div className="home">

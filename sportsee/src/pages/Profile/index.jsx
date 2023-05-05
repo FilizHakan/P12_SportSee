@@ -5,7 +5,10 @@ import Macros from "../../components/Macros";
 
 import "./profile.css";
 
-
+/**
+ * @description Profile is the creation of a profile page for each users
+ * @returns the custom profil page for each user
+ */
 export default function Profile ()
 {
     return (

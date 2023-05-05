@@ -1,5 +1,10 @@
 import { useState, useEffect } from "react";
 
+/**
+ * @description useFetch is the creation of the API call service using the URL object
+ * @param {fetch} url 
+ * @returns a fetch with error handling with a useState and useEffect
+ */
 export default function useFetch (url)
 {
     // Use hooks with useState (re-display) and useEffect
