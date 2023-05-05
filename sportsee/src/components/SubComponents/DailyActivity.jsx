@@ -10,12 +10,23 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
+/**
+ * @description Creating a daily activity bar chart with recharts
+ * @param {array | number} activity
+ * @const {array | number} activityData
+ * @const {array | number} activitySessions
+ * @returns Returns a daily activity bar chart with data from the API (retrieved from P12_SportSee_Back)
+ */
 
 export default function DailyActivity (activity)
 {
 
     const activityData = activity.data.data;
     const activitySessions = activityData.sessions;
+
+    /**
+     * @description Converting the mocked data "dates" into a week (seven day period) for the bar chart
+     */
 
     let day = activitySessions.map((data) =>
     {
@@ -40,16 +51,32 @@ export default function DailyActivity (activity)
         };
     });
 
+    
+    /**
+     * @description converting the energy units (calories => kCal)
+     * @param {number} C are the calories data
+     * @returns the converted values (calories => kCal) in the bar chart
+     */
     let kCal = (C) =>
     {
         return C.calories;
     }
 
+    /**
+     * @description Converting the weight units (weight => Kilogram)
+     * @param {number} W are the weight data
+     * @returns the converted values (weight => Kilogram) in the bar chart
+     */
     let Kg = (W) =>
     {
         return W.kilogram;
     }
 
+    /**
+     * @description Creation of a custom tooltip for the daily activity chart
+     * @param {number | string} param0
+     * @returns the converted the denominations and values (kg and kCal) in a custom tooltip
+     */
     function CustomTooltip({ payload, active })
     {
         if (active)
@@ -64,9 +91,14 @@ export default function DailyActivity (activity)
         return null;
     }
 
+    /**
+     * @description Creation of a function to adapt the color in the bar chart
+     * @param {color} value
+     * @returns the desired color of bar chart's text legend
+     */
     const renderColorfullLegendText = (value) => 
     {
-        return <span style={{ color: "#74798C" }}>{value}</span>;
+        return <span style={{ color: "#74798c" }}>{value}</span>;
     };
 
     return (

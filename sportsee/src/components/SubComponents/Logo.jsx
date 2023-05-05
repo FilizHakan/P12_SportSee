@@ -3,8 +3,14 @@ import { Link } from "react-router-dom";
 
 import LogoSportSee from "../../assets/logo-sportsee.svg";
 
-function Logo() 
+/**
+ * @description Creation of the logo container
+ * @returns (JSX.Element) logo
+ */
+
+export default function Logo() 
 {
+
   return (
     <div className="logoContainer">
 
@@ -12,9 +18,7 @@ function Logo()
         <img src={LogoSportSee} className="sportSeeLogo" alt="SportSee Logo">
         </img>
       </Link>
-      
+
     </div>
   );
 };
-
-export default Logo;

@@ -5,6 +5,14 @@ import {
   ResponsiveContainer, 
 } from "recharts";
 
+/**
+ * @description fetch scores for each users
+ * @param {number} user
+ * @const {object} userScoreData (userInfos, score, keyData)
+ * @const {number} todayUserScoreData (user score as per today)
+ * @const {array} TSData (name, uv, pv, fill)
+ * @returns the scores for each users all converted into percentage
+ */
 export default function GoalScore (user)
 {
 

@@ -8,12 +8,21 @@ import {
   Text,
 } from "recharts";
 
-
+/**
+ *@description RadarCharts is the creation of the activity radar chart
+ * @param {array} performance
+ * @const {object} radarData (data, kind, userId)
+ * @param {number} kind values for cardio, energy, endurance, strength, speed, intensity
+ * @returns the values (number) in a string denominations
+ */
  export default function RadarCharts (performance) 
  {
 
   const radarData = performance.data.data;
 
+  /**
+   * @description Converting the mocked kind array data into an object (object value string)
+   */
   const radarChartDataTitle = radarData.data.map((data) => 
   {
     switch (data.kind) 
@@ -54,7 +63,15 @@ import {
   );
 };
 
-
+/** 
+ *@description renderPolarAngleAxis displays the position of the values (cardio, energy, endurance, strength, speed, intensity) in the radar chart
+ * @param {number} payload
+ * @param {number} x (horizontal axe)
+ * @param {number} y (vertical axe)
+ * @param {number} cx (displays values on the horizontal axis)
+ * @param {number} cy (displays values on the vertical axis)
+ * @returns the positioning of each values on the axes and their given style
+ */
 function renderPolarAngleAxis({ payload, x, y, cx, cy }) 
 {
   return (

@@ -8,13 +8,22 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-
+/**
+ * @description SessionLength is the chart to gather the session time
+ * @param {object} session 
+ * * @const {object} sessionData (sessions, userId)
+ * * @const {array} sesssionLength (day, sessionLength)
+ * @returns the session data
+ */
 export default function SessionLength (session) 
 {
 
     const sessionData = session.data.data;
     const sessionLength = sessionData.sessions;
 
+  /**
+   * @description Converting the mocked days data into a week letter as per the chart
+   */
     let days = sessionLength.map((data) => {
       switch (data.day) {
         case 1:
@@ -36,7 +45,11 @@ export default function SessionLength (session)
       }
     });
 
-
+  /**
+   * @description CustomTooltip is a custom tooltip + insert "min" as per minute for the chart
+   * @param {*} param0
+   * @returns the custom tooltip with the minute values
+   */
     function CustomTooltip ({ payload, active }) 
     {
       if (active) 

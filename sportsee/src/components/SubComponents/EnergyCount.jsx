@@ -5,10 +5,16 @@ import ProteinsIcon from "../../assets/protein-icon.svg";
 import GlucidsIcon from "../../assets/carbs-icon.svg";
 import LipidsIcon from "../../assets/fat-icon.svg";
 
-
+/**
+ * @description Fetch the mocked energy data into energy components
+ * @param {number} user fetch from each user's info
+ * @const {object} keyDatas (id, userInfos, todayScore, keyData)
+ * @const {object} energy (calorieCount, proteinCount, carbohydrateCount, lipidCount)
+ * @returns values of energy count
+ */
 export default function EnergyCount (user) 
 {
-  
+
   const keyDatas = user.data.data;
   const energy = keyDatas.keyData;
  

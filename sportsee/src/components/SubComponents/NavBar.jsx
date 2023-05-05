@@ -1,7 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function NavBar () 
+/**
+ * @description Creation of the horizontal navbar containing all the links)
+ * @returns (JSX.Element) the horizontal navbar
+ * 
+ */
+
+export default function NavBar () 
 {
 
   return (
@@ -13,10 +19,8 @@ function NavBar ()
         <Link className="settingButton navBarBtn" to="#Setting">Réglage</Link>
         <Link className="communityButton navBarBtn" to="#Communauty">Communauté</Link>
       </nav>
-      
+
     </div>
 
   );
 };
-
-export default NavBar;

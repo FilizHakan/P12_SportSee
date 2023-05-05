@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 
 import IconSportSeeMan from "../assets/icon-man.svg" 
 
-
+/**
+ * @description Creation of the error page (400)
+ * @returns the error page with a link to the homepage 
+ */
 function Error ({ code }) 
 {
   return (

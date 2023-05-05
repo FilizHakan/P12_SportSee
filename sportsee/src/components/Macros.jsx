@@ -9,6 +9,15 @@ import SessionLength from "./SubComponents/SessionLength";
 import GoalScore from "./SubComponents/GoalScore";
 import EnergyCount from "./SubComponents/EnergyCount";
 
+/**
+ * @description Macros is the set up of the API call service
+ * @const {object} userId returns a dynamic object parameters from the given URL
+ * @const {array} user returns the array user
+ * @const {array} session returns the array average session 
+ * @const {array} performance returns the array performance
+ * @const {array} activity returns the activity array
+ * @returns the call from each api addresses
+ */
 export default function Macros ()
 {
     const { userId } = useParams();

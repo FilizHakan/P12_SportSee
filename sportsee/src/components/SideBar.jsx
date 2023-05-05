@@ -5,8 +5,11 @@ import SwimmingIcon from "../assets/swimming-icon.svg";
 import BikingIcon from "../assets/biking-icon.svg";
 import WeightIcon from "../assets/weight-icon.svg";
 
-
-function SideBar() 
+/**
+ * @description SideBar is the creation of the vertical menu (sidebar menu) containing all the links
+ * @returns the vertical sidebar navigation icons (all the links) and copyright claims
+ */
+export default function SideBar() 
 {
   return (
     <div className="verticalSideBar">
@@ -39,4 +42,4 @@ function SideBar()
   );
 };
 
-export default SideBar;
+
