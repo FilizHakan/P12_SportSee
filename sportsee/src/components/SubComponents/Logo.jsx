@@ -5,7 +5,7 @@ import LogoSportSee from "../../assets/logo-sportsee.svg";
 
 /**
  * @description Creation of the logo container
- * @returns (JSX.Element) logo
+ * @returns {JSX.Element} logo
  */
 
 export default function Logo() 
@@ -15,10 +15,15 @@ export default function Logo()
     <div className="logoContainer">
 
       <Link to="http://localhost:3000/SportSee/Home">
-        <img src={LogoSportSee} className="sportSeeLogo" alt="SportSee Logo">
+        <img 
+        src={LogoSportSee} 
+        className="sportSeeLogo" 
+        alt="SportSee Logo"
+        >
         </img>
       </Link>
 
     </div>
+    
   );
 };

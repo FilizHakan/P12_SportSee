@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 /**
- * @description Creation of the horizontal navbar containing all the links)
- * @returns (JSX.Element) the horizontal navbar
+ * @description Creation of the horizontal navbar containing all the links
+ * @returns {JSX.Element} the horizontal navbar
  * 
  */
 

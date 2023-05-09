@@ -7,52 +7,24 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import PropTypes from "prop-types";
 
 /**
- * @description SessionLength is the chart to gather the session time
- * @param {object} session 
- * * @const {object} sessionData (sessions, userId)
- * * @const {array} sesssionLength (day, sessionLength)
- * @returns the session data
+ * @description SessionLength is the line chart to gather the session time
+ * @param {array} data - data for the line chart
+ * @returns {JSX.Element} the session data
  */
-export default function SessionLength (session) 
+export default function SessionLength ({ data }) 
 {
 
-    const sessionData = session.data.data;
-    const sessionLength = sessionData.sessions;
-
-  /**
-   * @description Converting the mocked days data into a week letter as per the chart
-   */
-    let days = sessionLength.map((data) => {
-      switch (data.day) {
-        case 1:
-          return { ...data, day: "L" };
-        case 2:
-          return { ...data, day: "M" };
-        case 3:
-          return { ...data, day: "M" };
-        case 4:
-          return { ...data, day: "J" };
-        case 5:
-          return { ...data, day: "V" };
-        case 6:
-          return { ...data, day: "S" };
-        case 7:
-          return { ...data, day: "D" };
-        default:
-          return { ...data };
-      }
-    });
-
-  /**
-   * @description CustomTooltip is a custom tooltip + insert "min" as per minute for the chart
-   * @param {*} param0
-   * @returns the custom tooltip with the minute values
-   */
+    /**
+     * @description Creation of a custom tooltip for the daily activity chart
+     * @param {number | string} param0
+     * @returns {JSX.Element} the converted the denominations and values (kg and kCal) in a custom tooltip
+     */ 
     function CustomTooltip ({ payload, active }) 
     {
-      if (active) 
+      if (active && payload && payload.length) 
       {
         return (
           <div className="customTooltip">
@@ -73,15 +45,55 @@ export default function SessionLength (session)
         <p className="sessionLengthTitle">Durée moyenne des sessions</p>
 
         <ResponsiveContainer>
-          <LineChart data={days} margin={{ top: 0, right: 16, bottom: 24, left: 16 }}>
-            <XAxis dataKey="day" stroke="rgba(255, 255, 255, 0.6)" axisLine={false} dy={10} tickLine={false} tick={{fontSize: 12, fontWeight: 500,}} />
-            <YAxis dataKey="sessionLength" domain={[10, "dataMax + 70"]} hide={true} />
-            <Line dataKey="sessionLength" type={"monotone"} stroke="rgba(255, 255, 255, 0.6)" strokeWidth={2} dot={false} active activeDot={{stroke: "rgba(255,255,255, 0.6)", strokeWidth: 16, r: 5,}} />
-            <Tooltip wrapperStyle={{ outline: "none" }} content={<CustomTooltip />} cursor={{strokeWidth: 0}} />
+
+          <LineChart 
+            data={data} 
+            margin={{ top: 0, right: 16, bottom: 24, left: 16 }}
+          >
+            <XAxis 
+              dataKey="day" 
+              stroke="rgba(255, 255, 255, 0.6)" 
+              axisLine={false} 
+              dy={10} 
+              tickLine={false} 
+              tick={{fontSize: 12, fontWeight: 500,}} 
+            />
+            <YAxis 
+              dataKey="sessionLength" 
+              domain={[10, "dataMax + 70"]} 
+              hide={true} 
+            />
+            <Line 
+              dataKey="sessionLength" 
+              type={"monotone"} 
+              stroke="rgba(255, 255, 255, 0.6)" 
+              strokeWidth={2} dot={false} 
+              active 
+              activeDot={{stroke: "rgba(255,255,255, 0.6)", strokeWidth: 16, r: 5,}} 
+            />
+            <Tooltip 
+              wrapperStyle={{ outline: "none" }} 
+              content={<CustomTooltip />} 
+              cursor={{strokeWidth: 0}} 
+            />
           </LineChart>
+
         </ResponsiveContainer>
 
       </div>
+
     );
+  };
+
+  SessionLength.propTypes = 
+  {
+    data: PropTypes.arrayOf
+    (
+      PropTypes.shape
+      ({
+        day: PropTypes.string.isRequired,
+        sessionLength: PropTypes.number.isRequired,
+      })
+    ),
   };
   

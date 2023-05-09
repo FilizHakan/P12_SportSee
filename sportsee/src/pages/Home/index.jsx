@@ -7,22 +7,37 @@ import "./home.css";
 
 /**
  * @description Home is the creation of the main home page
- * @returns the main home page
+ * @returns {JSX.Element} Home page
  */
-function Home() {
+export default function Home () 
+{
     return (
     <div className="home">
 
       <div className="homeLogo">
         <Link to="/SportSee/Home">
-          <img src={LogoSportSee} className="homeIconLogo" alt="SportSee Icon">
+          <img 
+            src={LogoSportSee} 
+            className="homeIconLogo" 
+            alt="SportSee Icon"
+          >
           </img>
         </Link>
         
         <div className="profileLink">
           <nav className="profileLinkNav">
-            <Link to="/statistics/12" className="profile12Btn profileBtn">KARL</Link>
-            <Link to="/statistics/18" className="profile18Btn profileBtn">CÉCILIA</Link>
+            <Link 
+              to="/statistics/12" 
+              className="profile12Btn profileBtn"
+            >
+              KARL
+            </Link>
+            <Link 
+              to="/statistics/18" 
+              className="profile18Btn profileBtn"
+            >
+              CÉCILIA
+            </Link>
           </nav>
         </div>
       </div>
@@ -33,7 +48,11 @@ function Home() {
         </div>
         <p className="homeSubtitle">To view performance, click on any user profile</p>
         <div className="iconSportSee">
-          <img src={IconSportSeeMan} className="homeIcon" alt="SportSee Icon">
+          <img 
+            src={IconSportSeeMan} 
+            className="homeIcon" 
+            alt="SportSee Icon"
+          >
           </img>
         </div>
       </div>
@@ -41,5 +60,3 @@ function Home() {
     </div>
   );
 };
-
-export default Home;

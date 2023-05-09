@@ -18,5 +18,6 @@ export default function HorizontalHeader()
       <NavBar />
 
     </div>
+    
   );
 };

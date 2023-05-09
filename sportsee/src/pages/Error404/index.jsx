@@ -4,13 +4,16 @@ import Error from "../../components/Error";
 import "./error404.css";
 
 /**
- * @description Error404 is the creation of the 400 error page from the error sub-component
- * @returns the error page
+ * @description Error404 creates a 404 error page
+ * @returns {JSX.Element} 404 Error Page
  */
-export default function Error404() {
+export default function Error404 () 
+{
   return (
     <main>
-      <Error />     
+
+      <Error />   
+
     </main>
   );
 };
