@@ -11,7 +11,7 @@ import Stats from "../../components/Stats";
 import getSessionLengths from "../../apis/sessionLengths";
 import getDailyActivitySessions from "../../apis/dailyActivitySessions";
 import getPerformances from "../../apis/performances";
-import { getGoalScores } from "../../apis/goalScores";
+import { getGoalScores } from "../../apis/users";
 import { getUsers } from "../../apis/users";
 
 import "./profile.css";
