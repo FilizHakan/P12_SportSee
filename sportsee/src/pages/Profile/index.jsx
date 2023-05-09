@@ -22,7 +22,7 @@ import "./profile.css";
  */
 export default function Profile ()
 {
-
+    /* userId is extracted from the url */
     const { userId } = useParams().id;
 
     const [ userData, setUserData ] = useState (null) ;

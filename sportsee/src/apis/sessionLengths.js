@@ -1,6 +1,6 @@
 import axios from "axios";
 import { SessionLength } from "../models/SessionLength";
-//import { mockedData } from "./apiSetting";
+import { mockedData } from "./apiSetting";
 
 /**  
  * @description get service data for the average length session
@@ -14,17 +14,15 @@ export default async function getSessionLengths
   setErrorCode) 
 {
 
-  //const dataMock = "./mockedData.json";
-
-    /*if (mockedData) 
+    if (mockedData) 
     {
       await axios
-      .get(dataMock)
+      .get("./mock/mockedData.json")
       
       .then((res) => 
       {
         let sessionLengthDataArray = [];
-        let response = res.data["average-length-session"].sessions;
+        let response = res.data["average-session"].sessions;
 
         response.forEach((element) => 
         {
@@ -36,7 +34,7 @@ export default async function getSessionLengths
 
       });
 
-    } else {*/
+    } else {
 
       try 
       {
@@ -65,4 +63,4 @@ export default async function getSessionLengths
       };
 
     };
-//};
+};

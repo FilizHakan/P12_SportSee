@@ -1,6 +1,6 @@
 import axios from "axios";
 import { DailyActivitySession } from "../models/DailyActivitySession";
-//import { mockedData } from "./apiSetting";
+import { mockedData } from "./apiSetting";
 
 
 /**  
@@ -13,12 +13,11 @@ export default async function getDailyActivitySessions (
   userId, 
   setErrorCode) 
 {
-  //const dataMock = "./mockedData.json";
 
-  /*if (mockedData) 
+  if (mockedData) 
   {
     await axios
-    .get(dataMock)
+    .get("./mock/mockedData.json")
     
     .then((res) => 
     {
@@ -35,7 +34,7 @@ export default async function getDailyActivitySessions (
       
     });
 
-  } else {*/
+  } else {
 
     try 
     {
@@ -47,9 +46,9 @@ export default async function getDailyActivitySessions (
           let sessionDataArray = [];
           let data = res.data.data.sessions;
 
-          data.forEach((element) => 
+          data.forEach((el) => 
           {
-            let newData = new DailyActivitySession(element);
+            let newData = new DailyActivitySession(el);
             sessionDataArray.push(newData);
           });
 
@@ -64,5 +63,5 @@ export default async function getDailyActivitySessions (
     };
 
   };
-//};
+};
 

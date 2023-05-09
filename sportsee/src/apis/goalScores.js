@@ -1,6 +1,6 @@
 import axios from "axios";
 import { GoalScore } from "../models/GoalScore";
-//import { mockedData } from "./apiSetting";
+import { mockedData } from "./apiSetting";
 
 
 /**  
@@ -13,12 +13,11 @@ export async function getGoalScores (
   userId, 
   setErrorCode) 
 {
-  //const dataMock = "./mockedData.json";
 
-  /*if (mockedData) 
+  if (mockedData) 
   {
     await axios
-    .get(dataMock)
+    .get("./mock/mockedData.json")
     
     .then((res) => 
     {
@@ -36,7 +35,7 @@ export async function getGoalScores (
       return setGoalScoreData(newData);
     });
 
-  } else {*/
+  } else {
 
     try 
     {
@@ -87,4 +86,4 @@ export async function getGoalScores (
     };
 
   };
-//};
+};

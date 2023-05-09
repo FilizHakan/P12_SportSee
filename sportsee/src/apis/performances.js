@@ -1,6 +1,6 @@
 import axios from "axios";
 import { Performance } from "../models/Performance";
-//import { mockedData } from "./apiSetting";
+import { mockedData } from "./apiSetting";
 
 /**  Get Data - Performance
  * @param {function} setPerformanceData - to update dataPerformance
@@ -12,13 +12,11 @@ export default async function getPerformances (
   setErrorCode) 
 {
 
-  //const dataMock = "./mockedData.json";
-
-  /*if (mockedData) 
+  if (mockedData) 
   {
     await axios
 
-    .get(dataMock)
+    .get("./mock/mockedData.json")
 
     .then((res) => 
     {
@@ -34,7 +32,7 @@ export default async function getPerformances (
       return setPerformanceData(performanceDataArray.reverse());
     });
 
-  } else {*/
+  } else {
 
     try 
     {
@@ -62,4 +60,4 @@ export default async function getPerformances (
     };
 
   };
-//};
+};

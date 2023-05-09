@@ -1,8 +1,7 @@
 import axios from "axios";
 
 import { User } from "../models/User";
-//import { mockedData } from "./apiSetting";
-
+import { mockedData } from "./apiSetting";
 
 /**  
  * @description to get data for the user
@@ -15,12 +14,11 @@ export async function getUsers (
   setErrorCode) 
 {
 
-  //const dataMock = "./mockedData.json";
 
-  /*if (mockedData) 
+  if (mockedData) 
   {
     await axios
-    .get(dataMock)
+    .get("./mock/mockedData.json")
     
     .then((res) => 
     {
@@ -29,7 +27,7 @@ export async function getUsers (
       return setUserData(newData);
     });
 
-  } else {*/
+  } else {
 
     try 
     {
@@ -50,5 +48,5 @@ export async function getUsers (
     };
 
   };
-//};
+};
 

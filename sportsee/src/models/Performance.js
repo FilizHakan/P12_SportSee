@@ -5,7 +5,7 @@
  */
 export class Performance 
 {
-    constructor (element) 
+    constructor (data, element) 
     {
       this._value = element.value;
       this._number = element.kind;
