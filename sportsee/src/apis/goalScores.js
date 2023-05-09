@@ -8,7 +8,7 @@ import { GoalScore } from "../models/GoalScore";
  * @param {function} setDataPerformance - to update score data
  * @param {number} userId - user id
  */
-export default async function getGoalScores (
+export async function getGoalScores (
   setGoalScoreData, 
   userId, 
   setErrorCode) 

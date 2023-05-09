@@ -1,9 +1,9 @@
 {
-    "userMainData": [
+    "user": [
       {
         "userId": 12,
         "userInfos": {
-          "firstName": "MockedKarl",
+          "firstName": "Karl",
           "lastName": "Dovineau",
           "age": 31
         },
@@ -18,7 +18,7 @@
       {
         "userId": 18,
         "userInfos": {
-          "firstName": "MockedCecilia",
+          "firstName": "Cecilia",
           "lastName": "Ratorez",
           "age": 34
         },
@@ -32,7 +32,7 @@
       }
     ],
   
-    "userActivities": [
+    "activity": [
       {
         "userId": 12,
         "sessions": [
@@ -115,7 +115,7 @@
       }
     ],
   
-    "userAverageSession": [
+    "average-session": [
       {
         "userId": 12,
         "sessions": [
@@ -184,7 +184,7 @@
       }
     ],
   
-    "userPerformances": [
+    "performance": [
       {
         "userId": 12,
         "kind": {

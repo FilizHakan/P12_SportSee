@@ -9,7 +9,7 @@ import { User } from "../models/User";
  * @param {function} setDataUser - to update the data about the User
  * @param {number} userId - user id
  */
-export default async function getUsers (
+export async function getUsers (
   setUserData, 
   userId, 
   setErrorCode) 
