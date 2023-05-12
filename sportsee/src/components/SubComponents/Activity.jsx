@@ -11,83 +11,84 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
+/**
+ * Create a custom tooltip
+ * @param {bool} active - a boolean denoting if a tooltip should be displayed when a user mouses over the chart on desktop
+ * @param {array} payload - the data the tooltip will be displaying from the chart
+ * @returns {JSX.Element} CustomTooltip returns a custom tooltip
+ */
+const CustomTooltip = ({ payload, active }) =>
+{
+    if (active && payload && payload.length)
+    {
+        return (
+            <div className="customTooltipContainer">
+                <p className="dailyActivityLabel">{`${payload[0].value} Kg`}</p>
+                <p className="dailyActivityDescendantLabel">{`${payload[1].value} kCal`}</p>
+            </div>
+        );
+    };
+    return null;
+};
 
 /**
  * @description Creating a daily activity bar chart with recharts
- * @param {array} data - data for the bar chart
+ * @param {object} data - data for the bar chart
+ * @example 
+ * const activity =  [
+          {
+              day: '2020-07-01',
+              kilogram: 70,
+              calories: 240
+          },
+          {
+              day: '2020-07-02',
+              kilogram: 69,
+              calories: 220
+          },
+          {
+              day: '2020-07-03',
+              kilogram: 70,
+              calories: 280
+          },
+          {
+              day: '2020-07-04',
+              kilogram: 70,
+              calories: 500
+          },
+          {
+              day: '2020-07-05',
+              kilogram: 69,
+              calories: 160
+          },
+          {
+              day: '2020-07-06',
+              kilogram: 69,
+              calories: 162
+          },
+          {
+              day: '2020-07-07',
+              kilogram: 69,
+              calories: 390
+          }
+      ]
+ * return (
+ *   <Activity activity={activity} />
+ * )
  * @returns {JSX.Element} Returns a daily activity bar chart with data from the API
  */
 
-export default function DailyActivitySession (activity)
+export default function Activity ({ data })
 {
-    const activityData = activity.data.data;
-    const activitySessions = activityData.sessions;
 
     /**
-     * @description Converting the mocked data "dates" into a week (seven day period) for the bar chart
+     * Format the date to get the date
+     * @param {string} date - a date. Exemple : 2022-10-01
+     * @returns formatDay returns only the day
      */
-
-    let day = activitySessions.map((data) =>
+    const day = (date) => 
     {
-        switch (new Date(data.day).getDate())
-        {
-            case 1:
-                return {...data, day: "1"};
-            case 2:
-                return {...data, day: "2"};
-            case 3:
-                return {...data, day: "3"};
-            case 4:
-                return {...data, day: "4"};
-            case 5:
-                return {...data, day: "5"};
-            case 6:
-                return {...data, day: "6"};
-            case 7:
-                return {...data, day: "7"};
-            default:
-                return {...data };                                                      
-        };
-    });
-
-    
-    /**
-     * @description converting the energy units (calories => kCal)
-     * @param {number} C are the calories data
-     * @returns the converted values (calories => kCal) in the bar chart
-     */
-    let calories = (C) =>
-    {
-        return C.calories;
-    }
-
-    /**
-     * @description Converting the weight units (weight => Kilogram)
-     * @param {number} W are the weight data
-     * @returns the converted values (weight => Kilogram) in the bar chart
-     */
-    let Kilogram = (W) =>
-    {
-        return W.kilogram;
-    }
-
-    /**
-     * @description Creation of a custom tooltip for the daily activity chart
-     * @param {number | string} param0
-     * @returns the converted the denominations and values (kg and kCal) in a custom tooltip
-     */
-    function CustomTooltip({ payload, active })
-    {
-        if (active && payload && payload.length)
-        {
-            return (
-                <div className="customTooltipContainer">
-                    <p className="dailyActivityLabel">{`${payload[0].value} Kg`}</p>
-                    <p className="dailyActivityDescendantLabel">{`${payload[1].value /1000} kCal`}</p>
-                </div>
-            );
-        };
-        return null;
+        return new Date(date).getDate()
     }
 
     /**
@@ -110,24 +111,24 @@ export default function DailyActivitySession (activity)
                 <BarChart 
                     width={500} 
                     height={300} 
-                    data={day} 
+                    data={data.sessions} 
                     margin={{top: 22, left: 25, right: 0, bottom: 0,}} 
                     barGap={8} 
                     barCategoryGap={1}
                 >
                     <CartesianGrid vertical={false} strokeDasharray="1 1" />
-                    <XAxis dataKey="day" style={{ fill: "#9b9eac", fontsize: 14 }} />
+                    <XAxis dataKey="day" tickFormatter={day} style={{ fill: "#9b9eac", fontsize: 14 }} />
                     <YAxis 
                         yAxisId="kilogram" 
                         orientation={"right"} 
-                        keyData={Kilogram} 
+                        keyData="Kilogram" 
                         domain={["dataMin -2", "dataMax +1"]} 
                         dx={15} style={{ fill: "#9B9EAC", fontSize: 14 }} 
                         tickCount="3" 
                     />
                     <YAxis 
                         yAxisId="calories" 
-                        dataKey={calories} 
+                        dataKey="calories" 
                         hide={true} 
                     />
                     <Tooltip 
@@ -145,7 +146,7 @@ export default function DailyActivitySession (activity)
                     <Bar 
                         yAxisId="kilogram" 
                         name="Poids (Kg)" 
-                        dataKey={Kilogram} 
+                        dataKey="Kilogram" 
                         fill="#282d30" 
                         radius={[5, 5, 0, 0]} 
                         barSize={10} 
@@ -167,15 +168,13 @@ export default function DailyActivitySession (activity)
     );
 };
 
-DailyActivitySession.propTypes = 
+Activity.propTypes = 
 {
-    activity: PropTypes.arrayOf 
-    (
-      PropTypes.shape 
-      ({
-        calories: PropTypes.number.isRequired,
-        day: PropTypes.number.isRequired,
-        kilogram: PropTypes.number.isRequired,
-      }),
-    ),
+    data: PropTypes.object,
+};
+
+CustomTooltip.propTypes = 
+{
+    active: PropTypes.bool,
+    payload: PropTypes.array,
 };

@@ -9,42 +9,76 @@ import {
 } from "recharts";
 import PropTypes from "prop-types";
 
+// Const for the titles - Performance Radar chart
+const performanceTitle = {
+  1: 'cardio',
+  2: 'energie',
+  3: 'endurance',
+  4: 'force',
+  5: 'vitesse',
+  6: 'intensité',
+}
+
+// Const for performance format - replace 1 by "cardio" and so forth
+const formattedData = (data) =>
+{
+  return data.data.map((d) =>
+  ({
+    ...d,
+    kind: performanceTitle[d.kind],
+  }));
+}; 
+
 /**
  *@description RadarCharts is the creation of the activity radar chart
- * @param {array} performance - data for performance
- * @const {object} radarData (data, kind, userId)
- * @param {number} kind values for cardio, energy, endurance, strength, speed, intensity
+ * @param {object} performance - data for performance
+ * @example
+ * const performance = {
+      userId: 18,
+      kind: {
+          1: 'cardio',
+          2: 'energy',
+          3: 'endurance',
+          4: 'strength',
+          5: 'speed',
+          6: 'intensity'
+      },
+      data: [
+          {
+              value: 200,
+              kind: 1
+          },
+          {
+              value: 240,
+              kind: 2
+          },
+          {
+              value: 80,
+              kind: 3
+          },
+          {
+              value: 80,
+              kind: 4
+          },
+          {
+              value: 220,
+              kind: 5
+          },
+          {
+              value: 110,
+              kind: 6
+          }
+      ]
+  }
+ * return (
+ *   <Performance performance={performance} /> 
+ * )
  * @returns {JSX.Element} the values (number) in a string denominations
  */
- export default function Performance (performance) 
+ export default function Performance ({ data }) 
  {
 
-  const radarData = performance.data.data;
-
-  /**
-   * @description Converting the mocked kind array data into an object (object value string)
-   */
-  const radarChartDataTitle = radarData.data.map((data) => 
-  {
-    switch (data.kind) 
-    {
-    case 1:
-        return {...data, kind: "Intensité"};
-    case 2:
-        return {...data, kind: "Vitesse"};
-    case 3:
-        return {...data, kind: "Force"};
-    case 4:
-        return {...data, kind: "Endurance"};
-    case 5:
-        return {...data, kind: "Energie"};
-    case 6:
-        return {...data, kind: "Cardio"};
-    default:
-        return {...data};
-    };
-    
-  });
+  const performanceData = formattedData(data); 
 
   return (
     <div className="radarChartsData">
@@ -55,7 +89,7 @@ import PropTypes from "prop-types";
           cx="50%" 
           cy="58%" 
           outerRadius="60%" 
-          data={radarChartDataTitle}
+          data={performanceData}
         >
           <PolarGrid />
           <PolarAngleAxis 
@@ -105,13 +139,6 @@ function renderPolarAngleAxis({ payload, x, y, cx, cy })
 
 Performance.propTypes = 
 {
-  performance: PropTypes.arrayOf
-  (
-    PropTypes.shape 
-    ({
-      kind: PropTypes.string.isRequired,
-      value: PropTypes.number.isRequired,
-    })
-  ),
+  data: PropTypes.object
 };
 
