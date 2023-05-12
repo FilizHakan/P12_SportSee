@@ -11,25 +11,6 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-/**
- * Create a custom tooltip
- * @param {bool} active - a boolean denoting if a tooltip should be displayed when a user mouses over the chart on desktop
- * @param {array} payload - the data the tooltip will be displaying from the chart
- * @returns {JSX.Element} CustomTooltip returns a custom tooltip
- */
-const CustomTooltip = ({ payload, active }) =>
-{
-    if (active && payload && payload.length)
-    {
-        return (
-            <div className="customTooltipContainer">
-                <p className="dailyActivityLabel">{`${payload[0].value} Kg`}</p>
-                <p className="dailyActivityDescendantLabel">{`${payload[1].value} kCal`}</p>
-            </div>
-        );
-    };
-    return null;
-};
 
 /**
  * @description Creating a daily activity bar chart with recharts
@@ -80,6 +61,7 @@ const CustomTooltip = ({ payload, active }) =>
 
 export default function Activity ({ data })
 {
+    console.log(data)
 
     /**
      * Format the date to get the date
@@ -100,6 +82,24 @@ export default function Activity ({ data })
     {
         return <span style={{ color: "#74798c" }}>{value}</span>;
     };
+    /**
+     * @description Creation of a custom tooltip for the daily activity chart
+     * @param {number | string} param0
+     * @returns the converted the denominations and values (kg and kCal) in a custom tooltip
+     */
+    function CustomTooltip({ payload, active })
+    {
+        if (active)
+        {
+            return (
+                <div className="customTooltipContainer">
+                    <p className="dailyActivityLabel">{`${payload[0].value} Kg`}</p>
+                    <p className="dailyActivityLabel">{`${payload[1].value /1000} kCal`}</p>
+                </div>
+            );
+        };
+        return null;
+    }
 
     return (
         <div className="dailyActivityWrapper">
@@ -121,14 +121,14 @@ export default function Activity ({ data })
                     <YAxis 
                         yAxisId="kilogram" 
                         orientation={"right"} 
-                        keyData="Kilogram" 
+                        keyData={data.sessions.kilogram} 
                         domain={["dataMin -2", "dataMax +1"]} 
                         dx={15} style={{ fill: "#9B9EAC", fontSize: 14 }} 
                         tickCount="3" 
                     />
                     <YAxis 
                         yAxisId="calories" 
-                        dataKey="calories" 
+                        dataKey={data.sessions.calories}
                         hide={true} 
                     />
                     <Tooltip 
@@ -146,7 +146,7 @@ export default function Activity ({ data })
                     <Bar 
                         yAxisId="kilogram" 
                         name="Poids (Kg)" 
-                        dataKey="Kilogram" 
+                        dataKey="kilogram"
                         fill="#282d30" 
                         radius={[5, 5, 0, 0]} 
                         barSize={10} 
@@ -171,10 +171,4 @@ export default function Activity ({ data })
 Activity.propTypes = 
 {
     data: PropTypes.object,
-};
-
-CustomTooltip.propTypes = 
-{
-    active: PropTypes.bool,
-    payload: PropTypes.array,
 };

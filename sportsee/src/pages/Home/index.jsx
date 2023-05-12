@@ -27,13 +27,13 @@ export default function Home ()
         <div className="profileLink">
           <nav className="profileLinkNav">
             <Link 
-              to="/user/12" 
+              to="/statistics/12" 
               className="profile12Btn profileBtn"
             >
               KARL
             </Link>
             <Link 
-              to="/user/18" 
+              to="/statistics/18" 
               className="profile18Btn profileBtn"
             >
               CÉCILIA

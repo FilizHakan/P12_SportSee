@@ -10,7 +10,7 @@ import PropTypes from "prop-types";
 
 /**
  * @description fetch scores for each users
- * @param {number} score
+ * @param {string} score
  * @example
  * const score = 0.12
  * return (
@@ -98,5 +98,5 @@ export default function Score ({ data })
 
 Score.propTypes = 
 {
-  data: PropTypes.number,
+  data: PropTypes.string,
 };

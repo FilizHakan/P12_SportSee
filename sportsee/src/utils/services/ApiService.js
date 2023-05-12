@@ -1,4 +1,5 @@
-export default class ApiService {
+export default class ApiService 
+{
   /**
    * @param {string} userId
    * @returns {object} user data

@@ -1,6 +1,7 @@
-import { useContext, useState, useEffect } from "react";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
-import { SourceContext } from "../../utils/context/index";
+//import { SourceContext } from "../../utils/context/index";
+import ApiService from "../../utils/services/ApiService";
 
 import Header from "../../components/Header";
 import UserName from "../../components/SubComponents/UserName";
@@ -10,7 +11,7 @@ import AverageSession from "../../components/SubComponents/AverageSession";
 import Score from "../../components/SubComponents/Score";
 import EnergyCard from "../../components/SubComponents/EnergyCard";
 
-import CaloriesIcon from "../../assets/calories-icon.svg";
+import CaloriesIcon from "../../assets/calories-icon.svg"
 import ProteinsIcon from "../../assets/protein-icon.svg";
 import GlucidsIcon from "../../assets/carbs-icon.svg";
 import LipidsIcon from "../../assets/fat-icon.svg";
@@ -24,7 +25,6 @@ import "./profile.css";
 export default function Profile ()
 {
 
-  const { source } = useContext(SourceContext)
   const { userId } = useParams();
 
   const [dataMain, setDataMain] = useState(null);
@@ -35,8 +35,8 @@ export default function Profile ()
   const [isLoading, setIsLoading] = useState(true)
   const [isError, setError] = useState(false)
 
-  useEffect(() => 
-  {
+  const source = new ApiService();
+
     Promise.all
     ([
       source.getUserMainData(userId),
@@ -60,7 +60,7 @@ export default function Profile ()
       {
         setIsLoading(false)
       })
-  }, []);
+
 
   if (isLoading) 
   {
@@ -80,6 +80,7 @@ export default function Profile ()
 
     return (
         <div className="profileContainer">
+          
           <Header />
 
           <section className="userWrapper">
@@ -124,6 +125,7 @@ export default function Profile ()
                   </div>
               </div>
           </section>
+
         </div> 
     );
 };
