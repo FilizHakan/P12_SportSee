@@ -10,12 +10,41 @@ import {
 import PropTypes from "prop-types";
 
 /**
- *@description Performance creates the radar chart
- * @param {array} data - data for the chart
+ *@description RadarCharts is the creation of the activity radar chart
+ * @param {array} performance - data for performance
+ * @const {object} radarData (data, kind, userId)
+ * @param {number} kind values for cardio, energy, endurance, strength, speed, intensity
  * @returns {JSX.Element} the values (number) in a string denominations
  */
- export default function Performance ({ data }) 
+ export default function Performance (performance) 
  {
+
+  const radarData = performance.data.data;
+
+  /**
+   * @description Converting the mocked kind array data into an object (object value string)
+   */
+  const radarChartDataTitle = radarData.data.map((data) => 
+  {
+    switch (data.kind) 
+    {
+    case 1:
+        return {...data, kind: "Intensité"};
+    case 2:
+        return {...data, kind: "Vitesse"};
+    case 3:
+        return {...data, kind: "Force"};
+    case 4:
+        return {...data, kind: "Endurance"};
+    case 5:
+        return {...data, kind: "Energie"};
+    case 6:
+        return {...data, kind: "Cardio"};
+    default:
+        return {...data};
+    };
+    
+  });
 
   return (
     <div className="radarChartsData">
@@ -26,11 +55,11 @@ import PropTypes from "prop-types";
           cx="50%" 
           cy="58%" 
           outerRadius="60%" 
-          data={data}
+          data={radarChartDataTitle}
         >
           <PolarGrid />
           <PolarAngleAxis 
-            dataKey="subject" 
+            dataKey="kind" 
             stroke="white" 
             tick={(props) => renderPolarAngleAxis(props)} 
           />
@@ -76,11 +105,11 @@ function renderPolarAngleAxis({ payload, x, y, cx, cy })
 
 Performance.propTypes = 
 {
-  data: PropTypes.arrayOf
+  performance: PropTypes.arrayOf
   (
     PropTypes.shape 
     ({
-      subject: PropTypes.string.isRequired,
+      kind: PropTypes.string.isRequired,
       value: PropTypes.number.isRequired,
     })
   ),

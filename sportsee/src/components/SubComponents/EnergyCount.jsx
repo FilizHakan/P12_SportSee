@@ -8,11 +8,13 @@ import LipidsIcon from "../../assets/fat-icon.svg";
 
 /**
  * @description Fetch the mocked energy data into energy components
- * @param {object} macros - data for the macronutrients
+ * @param {object} user - data for the macronutrients
  * @returns {JSX.Element} values of energy count
  */
-export default function EnergyCount ({ macros }) 
+export default function EnergyCount (user) 
 {
+  const keyDatas = user.data.data;
+  const macros = keyDatas.keyData;
 
   return (
     <div className="energyCountContainer">

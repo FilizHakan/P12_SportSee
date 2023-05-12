@@ -26,7 +26,7 @@ export default function App ()
 
           <Routes>
             <Route path="/SportSee/Home" element={<Home />} />
-            <Route path="/:id" element={<Profile />} />
+            <Route path="/statistics/:userId" element={<Profile />} />
             <Route path="/404" element={<Error404 code={"ERR_BAD_REQUEST"} />} />
             <Route path="/503" element={<Error503 code={"ERR_BAD_REQUEST_503"} />} />
             <Route path='/' element={<Navigate to='/SportSee/Home' />} />

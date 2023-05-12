@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import {
   BarChart,
   Bar,
@@ -9,7 +10,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import PropTypes from "prop-types";
+
 
 /**
  * @description Creating a daily activity bar chart with recharts
@@ -17,8 +18,58 @@ import PropTypes from "prop-types";
  * @returns {JSX.Element} Returns a daily activity bar chart with data from the API
  */
 
-export default function DailyActivitySession ({ data })
+export default function DailyActivitySession (activity)
 {
+    const activityData = activity.data.data;
+    const activitySessions = activityData.sessions;
+
+    /**
+     * @description Converting the mocked data "dates" into a week (seven day period) for the bar chart
+     */
+
+    let day = activitySessions.map((data) =>
+    {
+        switch (new Date(data.day).getDate())
+        {
+            case 1:
+                return {...data, day: "1"};
+            case 2:
+                return {...data, day: "2"};
+            case 3:
+                return {...data, day: "3"};
+            case 4:
+                return {...data, day: "4"};
+            case 5:
+                return {...data, day: "5"};
+            case 6:
+                return {...data, day: "6"};
+            case 7:
+                return {...data, day: "7"};
+            default:
+                return {...data };                                                      
+        };
+    });
+
+    
+    /**
+     * @description converting the energy units (calories => kCal)
+     * @param {number} C are the calories data
+     * @returns the converted values (calories => kCal) in the bar chart
+     */
+    let calories = (C) =>
+    {
+        return C.calories;
+    }
+
+    /**
+     * @description Converting the weight units (weight => Kilogram)
+     * @param {number} W are the weight data
+     * @returns the converted values (weight => Kilogram) in the bar chart
+     */
+    let Kilogram = (W) =>
+    {
+        return W.kilogram;
+    }
 
     /**
      * @description Creation of a custom tooltip for the daily activity chart
@@ -59,7 +110,7 @@ export default function DailyActivitySession ({ data })
                 <BarChart 
                     width={500} 
                     height={300} 
-                    data={data} 
+                    data={day} 
                     margin={{top: 22, left: 25, right: 0, bottom: 0,}} 
                     barGap={8} 
                     barCategoryGap={1}
@@ -69,14 +120,14 @@ export default function DailyActivitySession ({ data })
                     <YAxis 
                         yAxisId="kilogram" 
                         orientation={"right"} 
-                        dataKey="kilogram" 
+                        keyData={Kilogram} 
                         domain={["dataMin -2", "dataMax +1"]} 
                         dx={15} style={{ fill: "#9B9EAC", fontSize: 14 }} 
                         tickCount="3" 
                     />
                     <YAxis 
                         yAxisId="calories" 
-                        dataKey="calories" 
+                        dataKey={calories} 
                         hide={true} 
                     />
                     <Tooltip 
@@ -94,7 +145,7 @@ export default function DailyActivitySession ({ data })
                     <Bar 
                         yAxisId="kilogram" 
                         name="Poids (Kg)" 
-                        dataKey="Kilogram" 
+                        dataKey={Kilogram} 
                         fill="#282d30" 
                         radius={[5, 5, 0, 0]} 
                         barSize={10} 
@@ -118,7 +169,7 @@ export default function DailyActivitySession ({ data })
 
 DailyActivitySession.propTypes = 
 {
-    data: PropTypes.arrayOf 
+    activity: PropTypes.arrayOf 
     (
       PropTypes.shape 
       ({

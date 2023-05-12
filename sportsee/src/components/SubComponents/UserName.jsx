@@ -9,8 +9,12 @@ import PropTypes from "prop-types";
  * @const {string} firstName (user Name)
  * @returns the user's hello message with his/her first name 
  */
-export default function UserName ({ firstName })
+export default function UserName (user)
 {
+
+    const userNameData = user.data.data;
+    const userInfos = userNameData.userInfos;
+    const firstName = userInfos.firstName;
     
     return (
         <div className="nameTitle">

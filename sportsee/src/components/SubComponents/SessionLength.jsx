@@ -10,14 +10,43 @@ import {
 import PropTypes from "prop-types";
 
 /**
- * @description SessionLength is the line chart to gather the session time
- * @param {array} data - data for the line chart
+ * @description SessionLength is the chart to gather the session time
+ * @param {object} session - data for the session
+ * @const {object} sessionData (sessions, userId)
+ * @const {array} sesssionLength (day, sessionLength)
  * @returns {JSX.Element} the session data
  */
-export default function SessionLength ({ data }) 
+export default function SessionLength (session) 
 {
 
-    /**
+  const sessionData = session.data.data;
+  const sessionLength = sessionData.sessions;
+
+/**
+ * @description Converting the mocked days data into a week letter as per the chart
+ */
+  let days = sessionLength.map((data) => {
+    switch (data.day) {
+      case 1:
+        return { ...data, day: "L" };
+      case 2:
+        return { ...data, day: "M" };
+      case 3:
+        return { ...data, day: "M" };
+      case 4:
+        return { ...data, day: "J" };
+      case 5:
+        return { ...data, day: "V" };
+      case 6:
+        return { ...data, day: "S" };
+      case 7:
+        return { ...data, day: "D" };
+      default:
+        return { ...data };
+    }
+  });
+
+   /**
      * @description Creation of a custom tooltip for the daily activity chart
      * @param {number | string} param0
      * @returns {JSX.Element} the converted the denominations and values (kg and kCal) in a custom tooltip
@@ -47,7 +76,7 @@ export default function SessionLength ({ data })
         <ResponsiveContainer>
 
           <LineChart 
-            data={data} 
+            data={days} 
             margin={{ top: 0, right: 16, bottom: 24, left: 16 }}
           >
             <XAxis 
@@ -87,7 +116,7 @@ export default function SessionLength ({ data })
 
   SessionLength.propTypes = 
   {
-    data: PropTypes.arrayOf
+    session: PropTypes.arrayOf
     (
       PropTypes.shape
       ({
