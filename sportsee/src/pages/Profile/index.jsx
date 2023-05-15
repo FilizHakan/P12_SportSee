@@ -99,26 +99,30 @@ export default function Profile ()
                           </div>
                       </div>
 
-                      <div className="energyContainer">
+                      <div className="energyCountContainer">
                         <EnergyCard
                           data={dataMain.keyData.calorieCount}
-                          name="calories"
+                          name="Calories"
                           icon={CaloriesIcon}
+                          className="calories"
                         />
                         <EnergyCard
                           data={dataMain.keyData.proteinCount}
-                          name="proteins"
+                          name="Proteines"
                           icon={ProteinsIcon}
+                          className="proteins"
                         />
                         <EnergyCard
                           data={dataMain.keyData.carbohydrateCount}
-                          name="glucids"
+                          name="Glucides"
                           icon={GlucidsIcon}
+                          className="glucids"
                         />
                         <EnergyCard
                           data={dataMain.keyData.lipidCount}
-                          name="lipids"
+                          name="Lipides"
                           icon={LipidsIcon}
+                          className="lipids"
                         />
                       </div>
 

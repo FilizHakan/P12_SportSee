@@ -24,17 +24,15 @@ export default function EnergyCard ({ data, name, className, icon })
 {
 
   return (
-    <div className="energyCountContainer">
+    <div className="energyContainer">
       <div className={className}>
         <img src={icon} alt="icon" className="energy-icons" />
       </div>
       <div className="energyNumber">
         <p className="energyCalculation">
-          {data}
+          {data}{" "}{name === 'Calories' ? 'kCal' : 'g'}
+          
         </p>
-        <span className="nutrient__quantity">
-          {name === 'Calories' ? 'kCal' : 'g'}
-        </span>
         <p className="energyTitle">{name}</p>
       </div>
     </div>

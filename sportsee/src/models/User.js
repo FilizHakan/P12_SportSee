@@ -3,20 +3,21 @@
  * @constructor
  * @param {object} data - user information
  */
-export class User
+export default class User
 {
     constructor (data) 
     {
+      this._userId = data.id;
       this._firstname = data.userInfos.firstName;
       this._keyData = data.keyData;
     }
   
-    get firstName () 
+    getFirstName = () => 
     {
-      return this._firstname;
+      return this._firstName;
     };
-  
-    get keyData () 
+
+    getEnergyData = () => 
     {
       return this._keyData;
     };

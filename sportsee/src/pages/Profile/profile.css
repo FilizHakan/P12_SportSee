@@ -171,7 +171,7 @@
 
 @media screen and (min-width: 1024px) and (max-width: 1439px) {
     .verticalSideBar {
-        min-height: 963px;
+        min-height: 788px;
     }
 
     .iconsContainer {
@@ -198,7 +198,7 @@
     right: 130px;
     left: 240px;
     top: 130px;
-    height: 75vh;
+    height: 78vh;
   }
 
   @media screen and (max-width: 1440px) {
@@ -250,10 +250,11 @@
 }
 
 /**** CHARTS ANALYSIS ****/
+
 .statsContainer {
     display: flex;
     width: 100%;
-    height: 92%;
+    height: 100%;
 }
 
 .chartsContainer {
@@ -264,14 +265,17 @@
     height: 100%;
 }
 
-/** ENERGY COUNT **/
+/** ENERGY CARD **/
+
 .energyCountContainer {
     display: flex;
     flex-direction: column;
-    width: 100%;
     height: 105.5%;
-    align-items: flex-end;
     justify-content: space-between;
+}
+
+.energyContainer {
+    display: flex;
 }
 
 .calories,
@@ -279,9 +283,8 @@
 .glucids,
 .lipids {
     display: flex;
-    width: 258px;
+    width: 170px;
     height: 100px;
-    margin-bottom: 30px;
     background-color: #f6f5f589;
     box-shadow: 0px 2px 4px rgba(28, 28, 28, 0.021);
     border-radius: 5px;
@@ -318,7 +321,7 @@
     .glucids,
     .lipids {
         height: 124px;
-        width: 258px;
+        width: 152px;
     }
 
     .statsContainer {
@@ -339,6 +342,7 @@
 }
 
   /** DAILY ACTIVITY **/
+  
 .dailyActivityWrapper {
     position: relative;
     width: 97%;
@@ -408,8 +412,8 @@
     }
 
     .activityContainer {
-        height: 60%;
-        width: 97%;
+        height: 90%;
+        width: 100%;
     }
 
     .dailyActivityWrapper {
@@ -424,7 +428,7 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    width: 97%;
+    width: 100%;
     height: 45%;
 }
 
@@ -510,16 +514,18 @@
 .scoretitle {
     position: absolute;
     margin: 0;
-    top: 20px;
-    left: 30px;
+    left: 11.63%;
+    right: 73.26%;
+    top: -70.13px;
     font-weight: bold;
+    font-size: 15px;
     color: #20253A;
 }
 
 .rateGoal {
     position: absolute;
     margin: 0;
-    font-size: 18px;
+    font-size: 13px;
     top: 35%;
     left: 35%;
     width: 30%;
@@ -537,16 +543,20 @@
       font-size: 12px;
     }
 
+    .rateGoal span {
+        font-size: 10px;
+    }
+
     .scoretitle {
-        left: 0;
-        top: 45px;
-        font-size: 17px;
+        left: -55px;
+        top: -50px;
+        font-size: 14px;
         text-align: center;
         width: 100%;
         height: auto;
     }
 
     .sessionContainer {
-        width: 97%;
+        width: 100%;
     }
 }

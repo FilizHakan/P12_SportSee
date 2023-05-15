@@ -10,7 +10,7 @@ import PropTypes from "prop-types";
 
 /**
  * @description fetch scores for each users
- * @param {string} score
+ * @param {number} score
  * @example
  * const score = 0.12
  * return (
@@ -20,14 +20,14 @@ import PropTypes from "prop-types";
  */
 export default function Score ({ data })
 {
-  const progression = data.score ?? data.todayScore; // fix different name issue in api
+  const progression = data.score ?? data.todayScore;
   const remaining = 1 - progression;
   const goalScore = 
   [
-    { name: 'progression', value: progression, color: '#FF0000' },
-    { name: 'remaining', value: remaining, color: '#000000' },
+    { name: 'progression', value: progression, color: 'red' },
+    { name: 'remaining', value: remaining, color: 'transparent' },
   ];
-  const COLORS = ['#FF0000', 'transparent'];
+  const COLORS = ['red', 'transparent'];
 
   /**
     * @description Creation of a custom legend for the goal score chart
@@ -51,27 +51,28 @@ export default function Score ({ data })
 
   return (
     <div className="goalScore">
-      <ResponsiveContainer height="110%">
+      <ResponsiveContainer height="100%">
 
       <PieChart
           margin={{
-            left: 5,
-            top: 5,
-            right: 5,
-            bottom: 5,
+            left: 1,
+            top: 1,
+            right: 1,
+            bottom: 1,
           }}
         >
           <circle 
             cx="50%" 
             cy="50%" 
-            r={'25%'} 
-            fill="#FFFFFF" 
+            r={'30%'} 
+            fill="white" 
           />
           <Pie
-            dataKey={goalScore}
-            fill="#FF0000"
+            dataKey={goalScore.value}
+            data={goalScore}
+            fill="red"
             innerRadius={'50%'}
-            outerRadius={'55%'}
+            outerRadius={'57%'}
             cx="50%"
             cy="50%"
             startAngle={90}
@@ -98,5 +99,5 @@ export default function Score ({ data })
 
 Score.propTypes = 
 {
-  data: PropTypes.string,
+  data: PropTypes.number,
 };

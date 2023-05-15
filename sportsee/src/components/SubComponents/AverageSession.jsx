@@ -24,7 +24,7 @@ const CustomTooltip = ({ payload, active }) =>
       <div className="customTooltip">
         <p className="sessionLabel">
           {payload[0].value}
-          <span>min</span>
+          {" "}min
         </p>
       </div>
     );
