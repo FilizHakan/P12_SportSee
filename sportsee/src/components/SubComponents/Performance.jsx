@@ -83,12 +83,12 @@ const formattedData = (data) =>
   return (
     <div className="radarChartsData">
 
-      <ResponsiveContainer height="80%">
+      <ResponsiveContainer height="100%">
 
         <RadarChart 
-          cx="50%" 
-          cy="58%" 
-          outerRadius="60%" 
+          cx="48%" 
+          cy="50%" 
+          outerRadius="50%" 
           data={performanceData}
         >
           <PolarGrid />
@@ -141,4 +141,3 @@ Performance.propTypes =
 {
   data: PropTypes.object
 };
-

@@ -6,7 +6,7 @@ import {
   ResponsiveContainer, 
   Legend,
 } from "recharts";
-import PropTypes from "prop-types";
+
 
 /**
  * @description fetch scores for each users
@@ -95,9 +95,4 @@ export default function Score ({ data })
       </ResponsiveContainer>
     </div>
   );
-};
-
-Score.propTypes = 
-{
-  data: PropTypes.number,
 };

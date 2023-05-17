@@ -61,8 +61,6 @@ import {
 
 export default function Activity ({ data })
 {
-    console.log(data)
-
     /**
      * Format the date to get the date
      * @param {string} date - a date. Exemple : 2022-10-01
