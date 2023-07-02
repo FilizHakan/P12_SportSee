@@ -9,7 +9,7 @@ import {
 
 
 /**
- * @description fetch scores for each users
+ * @description pie chart that fetches scores for each users
  * @param {number} score
  * @example
  * const score = 0.12
@@ -68,7 +68,7 @@ export default function Score ({ data })
             fill="white" 
           />
           <Pie
-            dataKey={goalScore.value}
+            dataKey="value"
             data={goalScore}
             fill="red"
             innerRadius={'50%'}

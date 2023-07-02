@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 //import { SourceContext } from "../../utils/context/index";
 import ApiService from "../../utils/services/ApiService";
 
@@ -69,12 +69,12 @@ export default function Profile ()
 
   if (isError) 
   {
-    return <h2>Oopsi!! We can't reach the server. Please try again later.</h2>
+    return <Navigate replace to="../../pages/Error503" />
   }
 
   if (!dataMain) 
   {
-    return <h2>User not found.</h2>
+    return <Navigate replace to="../../pages/Error404" />
   }
 
 
