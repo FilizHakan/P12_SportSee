@@ -1,0 +1,80 @@
+/*** DAILY ACTIVITY ***/
+  
+.dailyActivityWrapper {
+    position: relative;
+    width: 97%;
+    height: 50%;
+}
+
+.activityContainer {
+    width: 97%;
+    height: 51%;
+    border-radius: 5px;
+    background-color: #f6f5f589;
+}
+
+.dailyActivityTitle {
+    position: absolute;
+    margin: 0;
+    margin-left: 25px;
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.customTooltipContainer {
+    display: flex;
+    flex-direction: column;
+    width: 70px;
+    height: 75px;
+    color: #fff;
+    background-color: red;
+    line-height: 3;
+    font-size: 12px;
+}
+
+.dailyActivityLabel {
+    text-align: center;
+}
+
+.dailyActivityDescendantLabel {
+    text-align: center;
+  }
+
+.recharts-cartesian-axis-line {
+    display: none;
+}
+
+.recharts-cartesian-axis-tick-line {
+    display: none;
+}
+
+.recharts-wrapper .recharts-cartesian-grid-horizontal line:first-child {
+    stroke-dasharray: 0;
+}
+
+@media screen and (max-width: 1024px) {
+    .customTooltipContainer  {
+        width: 65px;
+        height: 75px;
+    }
+
+    .dailyActivityLabel {
+        font-size: 12px;
+    }
+
+    .dailyActivityDescendantLabel {
+        font-size: 12px;
+    }
+
+    .activityContainer {
+        height: 90%;
+        width: 95%;
+    }
+
+    .dailyActivityWrapper {
+        width: 100%;
+    }
+
+}

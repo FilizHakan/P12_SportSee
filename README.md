@@ -5,14 +5,16 @@
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![NPM](https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white)
 
-# Case Study : SportSee Project
+# CASE STUDY : SPORTSEE PROJECT
+
+Project 12 : Create a user dashboard with Recharts, React app with React and React Router
 
 - Author: Filiz Hakan
 - Version: 1.0
 
 ## Content
 
-For this project, we need to design a dashboard showing a user's performances while exercising. Therefore, anyone using the dasboard can keep up with his/her own performances on a weekly and/or daily basis. Only the desktop version is required (1024px x 780px) for this sprint. The dashboard concept was created in Figma.
+For this 12th project, we need to design a dashboard showing a user's performances while exercising. Therefore, anyone using the dasboard can keep up with his/her own performances on a weekly and/or daily basis. Only the desktop version is required (1024px x 780px) for this sprint. The dashboard concept was created in Figma.
 
 ## Model
 

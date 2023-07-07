@@ -1,0 +1,61 @@
+/** SESSION LENGTH **/
+
+.sessionContainer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    height: 250px;
+}
+
+.averageDuration {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 27%;
+    height: 100%;
+    background-color: rgba(3, 3, 3, 0.1);
+    border-radius: 0 5px 5px 0;
+}
+
+.averageLengthTimeContainer {
+    position: relative;
+    background-color: red;
+}
+
+.sessionLengthTitle {
+    position: absolute;
+    margin: 0;
+    margin-top: 20px;
+    margin-left: 30px;
+    width: 65%;
+    font-size: 15px;
+    color: #fff;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+}
+
+.customTooltip {
+    background-color: #fff;
+    height: 35px;
+    margin: 10px;
+    width: 100%;
+    font-size: 12px;
+    line-height: 35px;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+.sessionLabel {
+    color: black;
+    text-align: center;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 1260px) {
+    .sessionLengthTitle {
+      font-size: 12px;
+    }
+}

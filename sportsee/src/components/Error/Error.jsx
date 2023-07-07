@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import IconSportSeeMan from "../assets/icon-man.svg" 
+import IconSportSeeMan from "../../assets/icon-man.svg" 
 
 /**
  * @description Creation of the error pages 
@@ -11,7 +11,6 @@ export default function Error ({ code })
 {
   return (
     <div className="errorContainer">
-
       <h1 className="errorTitle">404</h1>
 
       {code === "ERR_NETWORK" ? 
@@ -40,7 +39,6 @@ export default function Error ({ code })
       ) : (
         
         <div>
-
             <p className="errorContent">
                 Oops! La page que vous demandez n'existe pas.
             </p>

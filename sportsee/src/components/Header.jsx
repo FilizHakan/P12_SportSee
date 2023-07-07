@@ -1,7 +1,7 @@
 import React from "react";
 
-import SideBar from "./SideBar";
-import HorizontalHeader from "./SubComponents/HorizontalHeader";
+import SideBar from "./Headers/SideBar";
+import HorizontalHeader from "./Headers/HorizontalHeader";
 
 /**
  * @description Header is the complete menu: the horizontal menu + the side bar menu

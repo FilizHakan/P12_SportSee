@@ -9,7 +9,7 @@ import {
   Rectangle,
 } from "recharts";
 import PropTypes from "prop-types";
-
+import "./averageSession.css";
 /**
  * @description Create a custom tooltip
  * @param {bool} active - a boolean denoting if a tooltip should be displayed when a user mouses over the chart on desktop
@@ -33,12 +33,14 @@ const CustomTooltip = ({ payload, active }) =>
 };
 
 /**
- * Create a custom cursor
+ * @name CustomCursor
+ * @description Create a custom cursor
  * @param {array} points - the current position of the cursor coordinate x and y
  * @param {number} width - the width of the graph
  * @returns CustomCursor returns a cursor in the shape of a rectangle in the background
  */
-const CustomCursor = ({ points, width }) => {
+const CustomCursor = ({ points, width }) => 
+{
   const { x } = points[0]
   return (
     <Rectangle fill="hsla(0, 0%, 0%, 9.75%)" x={x} width={width} height={300} />
@@ -46,8 +48,10 @@ const CustomCursor = ({ points, width }) => {
 }
 
 /**
- * @description SessionLength is the chart to gather the session time
- * @param {object} data - The data of the user sessions over a week
+ * @name AverageSession
+ * @description AverageSession is the chart to gather the session time
+ * @param {Object[]} SessionTime - Array of objects representing the chart data.
+ * @param {number} userId - User's ID.
  * @example
  * const sessions = [
           {
@@ -80,21 +84,25 @@ const CustomCursor = ({ points, width }) => {
           }
       ]
  * return (
- *   <AverageSession sessions={sessions} />
+ *   <AverageSession sessionTime={sessionTime} userId={parseInt(userId)/>
  * ) 
  * @returns {JSX.Element} the session data
- */
-export default function AverageSession ({ data }) 
+ **/
+export default function AverageSession ({ sessionTime, userId }) 
 {
 
   const weekDays = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
+
   /**
-   * @description Conversion of number data into days over a week
-   */
-  const sessionTime = data.sessions.map((session, index) => ({
-    day: weekDays[index],
-    sessionLength: session.sessionLength,
-  }));
+   * Function to convert numbers into letters for days of the week.
+   *
+   * @param {number} dayNumber - The day number between 1 and 7
+   * @returns {string} The letter corresponding to the day of the week (L, M, M, J, V, S, D).
+  **/
+  const day = (dayNumber) => 
+  {
+    return weekDays[dayNumber - 1] || "";
+  };
 
 
     return (
@@ -107,26 +115,27 @@ export default function AverageSession ({ data })
 
           <LineChart 
             data={sessionTime} 
-            margin={{ top: 0, right: 16, bottom: 24, left: 16 }}
+            margin={{ top: 50, right: 30, left: 20, bottom: 25 }}
           >
             <XAxis 
               dataKey="day" 
-              stroke="rgba(255, 255, 255, 0.6)" 
+              stroke="rgba(255, 255, 255, 0.7)" 
               axisLine={false} 
-              dy={10} 
+              dy={25} 
               tickLine={false} 
-              tick={{fontSize: 12, fontWeight: 500,}} 
+              tickFormatter={day}
             />
             <YAxis 
-              dataKey="sessionLength" 
+              dataKey="day" 
               domain={[10, "dataMax + 70"]} 
               hide={true} 
             />
             <Line 
-              dataKey="sessionLength" 
-              type={"monotone"} 
-              stroke="rgba(255, 255, 255, 0.6)" 
-              strokeWidth={2} dot={false} 
+              dataKey={`User${userId}`} 
+              type={"natural"} 
+              stroke="rgba(255, 255, 255, 0.8)" 
+              strokeWidth={2} 
+              dot={false} 
               active 
               activeDot={{stroke: "rgba(255,255,255, 0.6)", strokeWidth: 16, r: 5,}} 
             />
@@ -135,6 +144,7 @@ export default function AverageSession ({ data })
               content={<CustomTooltip />} 
               cursor={<CustomCursor />}  
             />
+
           </LineChart>
 
         </ResponsiveContainer>
@@ -146,7 +156,8 @@ export default function AverageSession ({ data })
 
   AverageSession.propTypes = 
   {
-    data: PropTypes.object,
+    sessionTime: PropTypes.array,
+    userId: PropTypes.number,
   };
 
   CustomTooltip.propTypes = 

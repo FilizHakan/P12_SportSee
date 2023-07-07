@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import YogaIcon from "../assets/yoga-icon.svg";
-import SwimmingIcon from "../assets/swimming-icon.svg";
-import BikingIcon from "../assets/biking-icon.svg";
-import WeightIcon from "../assets/weight-icon.svg";
+import YogaIcon from "../../assets/yoga-icon.svg";
+import SwimmingIcon from "../../assets/swimming-icon.svg";
+import BikingIcon from "../../assets/biking-icon.svg";
+import WeightIcon from "../../assets/weight-icon.svg";
 
 /**
  * @description SideBar is the creation of the vertical menu (sidebar menu) containing all the links

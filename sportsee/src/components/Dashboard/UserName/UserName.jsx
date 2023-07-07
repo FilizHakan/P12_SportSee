@@ -1,31 +1,30 @@
 import React from "react";
 import PropTypes from "prop-types";
-
+import "./userName.css";
 /**
  * @description Fetch the mocked user data to transform them into the name components
- * @param {string} firstname (user Name)
+ * @param {string} userName (user Name)
  * @returns the user's hello message with his/her first name 
  */
-export default function UserName ({ firstname })
-{
-    
+export default function UserName ({ userName })
+{    
+    //console.log(userName)
     return (
         <div className="nameTitle">
-            
             <h1 className="name">
                 Bonjour {" "}
-                <span className="firstName" style={{ color:"#ff0000"}}>{firstname}</span>
+                <span className="firstName" style={{ color:"#ff0000"}}>{userName?.firstName}</span>
             </h1>
-
             <p className="congrats">
                 Félicitation ! Vous avez explosé vos objectifs hier 👏
             </p>
-
-        </div>
+        </div>        
     );
 };
 
 UserName.propTypes = 
 {
-    firstname: PropTypes.string.isRequired,
+    userName: PropTypes.shape({
+        firstName: PropTypes.string,
+    }),
 };

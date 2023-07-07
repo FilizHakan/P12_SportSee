@@ -1,0 +1,33 @@
+/**** NAME ****/
+
+.nameTitle {
+    width: 100%;
+    font-size: 50px;
+}
+
+.name {
+    font-size: 50px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.congrats {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+    .hello {
+        font-size: 36px;
+    }
+
+    .congrats {
+        font-size: 16px;
+        margin: 0;
+    }
+
+    .name {
+        margin: -20px 0 10px 0;
+    }
+    
+}

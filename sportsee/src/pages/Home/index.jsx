@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import LogoSportSee from "../../assets/logo-sportsee.svg" 
-import IconSportSeeMan from "../../assets/icon-man.svg" 
+import { USER_MAIN_DATA } from "../../utils/data";
+import LogoSportSee from "../../assets/logo-sportsee.svg"; 
+import IconSportSeeMan from "../../assets/icon-man.svg";
+
 import "./home.css";
 
 /**
@@ -26,19 +28,17 @@ export default function Home ()
         
         <div className="profileLink">
           <nav className="profileLinkNav">
-            <Link 
-              to="/statistics/12" 
-              className="profile12Btn profileBtn"
-            >
-              KARL
-            </Link>
-            <Link 
-              to="/statistics/18" 
-              className="profile18Btn profileBtn"
-            >
-              CÉCILIA
-            </Link>
-          </nav>
+            {USER_MAIN_DATA.map((user) => (
+              <div className="linkContainer" key={user.id}>
+                <Link 
+                  to={`/statistics/${user.id}`} 
+                  className="profileBtn"
+                >
+                  {`${user.userInfos.firstName}`}
+                </Link>
+              </div>
+            ))}
+          </nav>     
         </div>
       </div>
 
